@@ -44,7 +44,10 @@ namespace ExcelDataReader
 
         public int RowCount => _worksheetIterator?.Current?.RowCount ?? 0;
 
-        public int RecordsAffected => throw new NotSupportedException();
+        public int RecordsAffected
+        {
+            get { throw new NotSupportedException(); }
+        }
 
         public double RowHeight => _rowIterator?.Current.Height ?? 0;
 
@@ -54,23 +57,36 @@ namespace ExcelDataReader
 
         public object this[int i] => GetValue(i);
 
-        public object this[string name] => throw new NotSupportedException();
+        public object this[string name]
+        {
+            get { throw new NotSupportedException(); }
+        }
 
         public bool GetBoolean(int i) => (bool)GetValue(i);
 
         public byte GetByte(int i) => (byte)GetValue(i);
 
         public long GetBytes(int i, long fieldOffset, byte[] buffer, int bufferoffset, int length)
-            => throw new NotSupportedException();
+        {
+            throw new NotSupportedException();
+        }
 
         public char GetChar(int i) => (char)GetValue(i);
 
         public long GetChars(int i, long fieldoffset, char[] buffer, int bufferoffset, int length)
-             => throw new NotSupportedException();
+        {
+            throw new NotSupportedException();
+        }
 
-        public IDataReader GetData(int i) => throw new NotSupportedException();
+        public IDataReader GetData(int i)
+        {
+            throw new NotSupportedException();
+        }
 
-        public string GetDataTypeName(int i) => throw new NotSupportedException();
+        public string GetDataTypeName(int i)
+        {
+            throw new NotSupportedException();
+        }
 
         public DateTime GetDateTime(int i) => (DateTime)GetValue(i);
 
@@ -90,12 +106,21 @@ namespace ExcelDataReader
 
         public long GetInt64(int i) => (long)GetValue(i);
 
-        public string GetName(int i) => throw new NotSupportedException();
+        public string GetName(int i)
+        {
+            throw new NotSupportedException();
+        }
 
-        public int GetOrdinal(string name) => throw new NotSupportedException();
+        public int GetOrdinal(string name)
+        {
+            throw new NotSupportedException();
+        }
 
         /// <inheritdoc />
-        public DataTable GetSchemaTable() => throw new NotSupportedException();
+        public DataTable GetSchemaTable()
+        {
+            throw new NotSupportedException();
+        }
 
         public string GetString(int i) => (string)GetValue(i);
 
@@ -106,7 +131,10 @@ namespace ExcelDataReader
             return RowCells[i]?.Value;
         }
 
-        public int GetValues(object[] values) => throw new NotSupportedException();
+        public int GetValues(object[] values)
+        {
+            throw new NotSupportedException();
+        }
                
         public bool IsDBNull(int i) => GetValue(i) == null;
 

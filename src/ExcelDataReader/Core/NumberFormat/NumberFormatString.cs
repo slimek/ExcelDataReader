@@ -18,7 +18,8 @@ namespace ExcelDataReader.Core.NumberFormat
             var isValid = true;
             while (true)
             {
-                var section = Parser.ParseSection(tokenizer, out var syntaxError);
+                bool syntaxError;
+                var section = Parser.ParseSection(tokenizer, out syntaxError);
 
                 if (syntaxError)
                     isValid = false;

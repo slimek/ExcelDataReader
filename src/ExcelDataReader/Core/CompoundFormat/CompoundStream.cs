@@ -38,7 +38,11 @@ namespace ExcelDataReader.Core.CompoundFormat
 
         public override long Length { get; }
 
-        public override long Position { get => Offset - SectorBytes.Length + SectorOffset; set => Seek(value, SeekOrigin.Begin); }
+        public override long Position
+        {
+            get { return Offset - SectorBytes.Length + SectorOffset; }
+            set { Seek(value, SeekOrigin.Begin); }
+        }
 
         private Stream BaseStream { get; set; }
 

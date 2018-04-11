@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -84,7 +85,8 @@ namespace ExcelDataReader.Core.CsvFormat
                 var separator = separators[i];
                 SeparatorInfo separatorInfo = separatorInfos[i];
 
-                separatorInfo.Buffer.ParseBuffer(bytes, offset, count, out var rows);
+                List<List<string>> rows;
+                separatorInfo.Buffer.ParseBuffer(bytes, offset, count, out rows);
 
                 foreach (var row in rows)
                 {
@@ -102,7 +104,8 @@ namespace ExcelDataReader.Core.CsvFormat
                 var separator = separators[i];
                 SeparatorInfo separatorInfo = separatorInfos[i];
 
-                separatorInfo.Buffer.Flush(out var rows);
+                List<List<string>> rows;
+                separatorInfo.Buffer.Flush(out rows);
 
                 foreach (var row in rows)
                 {
@@ -122,7 +125,8 @@ namespace ExcelDataReader.Core.CsvFormat
 
             foreach (var encoding in encodings)
             {
-                if (IsEncodingPreamble(bom, encoding, out int length))
+                int length;
+                if (IsEncodingPreamble(bom, encoding, out length))
                 {
                     bomLength = length;
                     return encoding;

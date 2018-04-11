@@ -30,7 +30,11 @@ namespace ExcelDataReader.Core.OfficeCrypto
 
         public override long Length => DecryptedLength;
 
-        public override long Position { get => Offset - SegmentLength + SegmentOffset; set => Seek(value, SeekOrigin.Begin); }
+        public override long Position
+        {
+            get { return Offset - SegmentLength + SegmentOffset; }
+            set { Seek(value, SeekOrigin.Begin); }
+        }
 
         private Stream Stream { get; set; }
 
