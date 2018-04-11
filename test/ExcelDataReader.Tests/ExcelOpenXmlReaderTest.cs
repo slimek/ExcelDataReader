@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Globalization;
 #if NET20 || NET45 || NETCOREAPP2_0
@@ -499,8 +499,8 @@ namespace ExcelDataReader.Netstandard20.Tests
                 val2 = dataSet.Tables[0].Rows[1][0].ToString();
                 Assert.AreEqual(val1, val2);
 
-                // librement réutilisable
-                val1 = "librement réutilisable";
+                // librement rÐ¹utilisable
+                val1 = "librement rÃ©utilisable";
                 val2 = dataSet.Tables[0].Rows[7][0].ToString();
                 Assert.AreEqual(val1, val2);
 
@@ -1007,8 +1007,8 @@ namespace ExcelDataReader.Netstandard20.Tests
         {
             using (var reader = ExcelReaderFactory.CreateOpenXmlReader(Configuration.GetTestWorkbook("Test_git_issue_224_simple")))
             {
-                Assert.That(reader.HeaderFooter?.OddHeader, Is.EqualTo("&LLeft åäö &T&CCenter åäö &D&RRight  åäö &P"), "Header");
-                Assert.That(reader.HeaderFooter?.OddFooter, Is.EqualTo("&LLeft åäö &P&CFooter åäö &P&RRight åäö &D"), "Footer");
+                Assert.That(reader.HeaderFooter?.OddHeader, Is.EqualTo("&LLeft Ã¥Ã¤Ã¶ &T&CCenter Ã¥Ã¤Ã¶ &D&RRight  Ã¥Ã¤Ã¶ &P"), "Header");
+                Assert.That(reader.HeaderFooter?.OddFooter, Is.EqualTo("&LLeft Ã¥Ã¤Ã¶ &P&CFooter Ã¥Ã¤Ã¶ &P&RRight Ã¥Ã¤Ã¶ &D"), "Footer");
             }
         }
 
@@ -1024,8 +1024,8 @@ namespace ExcelDataReader.Netstandard20.Tests
 
                 Assert.That(reader.HeaderFooter?.FirstHeader, Is.EqualTo("&CFirst header center"), "First Header");
                 Assert.That(reader.HeaderFooter?.FirstFooter, Is.EqualTo("&CFirst footer center"), "First Footer");
-                Assert.That(reader.HeaderFooter?.OddHeader, Is.EqualTo("&LLeft åäö &T&COdd page header&RRight  åäö &P"), "Odd Header");
-                Assert.That(reader.HeaderFooter?.OddFooter, Is.EqualTo("&LLeft åäö &P&COdd Footer åäö &P&RRight åäö &D"), "Odd Footer");
+                Assert.That(reader.HeaderFooter?.OddHeader, Is.EqualTo("&LLeft Ã¥Ã¤Ã¶ &T&COdd page header&RRight  Ã¥Ã¤Ã¶ &P"), "Odd Header");
+                Assert.That(reader.HeaderFooter?.OddFooter, Is.EqualTo("&LLeft Ã¥Ã¤Ã¶ &P&COdd Footer Ã¥Ã¤Ã¶ &P&RRight Ã¥Ã¤Ã¶ &D"), "Odd Footer");
                 Assert.That(reader.HeaderFooter?.EvenHeader, Is.EqualTo("&L&A&CEven page header"), "Even Header");
                 Assert.That(reader.HeaderFooter?.EvenFooter, Is.EqualTo("&CEven page footer"), "Even Footer");
             }
