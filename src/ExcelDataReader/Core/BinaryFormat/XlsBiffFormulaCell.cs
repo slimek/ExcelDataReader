@@ -31,7 +31,7 @@ namespace ExcelDataReader.Core.BinaryFormat
                 {
                     var formulaValueByte1 = ReadByte(0x6);
                     var formulaValueByte3 = ReadByte(0x8);
-                    var formulaLength = ReadByte(0xF);
+                    // var formulaLength = ReadByte(0xF);
                     switch (formulaValueByte1)
                     {
                         case 0x00:

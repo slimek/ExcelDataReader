@@ -82,7 +82,7 @@ namespace ExcelDataReader.Core.CsvFormat
         {
             for (var i = 0; i < separators.Length; i++)
             {
-                var separator = separators[i];
+                // var separator = separators[i];
                 SeparatorInfo separatorInfo = separatorInfos[i];
 
                 List<List<string>> rows;
@@ -101,7 +101,7 @@ namespace ExcelDataReader.Core.CsvFormat
         {
             for (var i = 0; i < separators.Length; i++)
             {
-                var separator = separators[i];
+                // var separator = separators[i];
                 SeparatorInfo separatorInfo = separatorInfos[i];
 
                 List<List<string>> rows;

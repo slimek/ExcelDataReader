@@ -40,7 +40,7 @@ namespace ExcelDataReader.Core.OfficeCrypto
             KeySize = BitConverter.ToInt32(bytes, 28);
 
             // Don't use this; is implementation-specific
-            var providerType = (StandardProvider)BitConverter.ToUInt32(bytes, 32);
+            // var providerType = (StandardProvider)BitConverter.ToUInt32(bytes, 32);
 
             // skip two reserved dwords
             CSPName = System.Text.Encoding.Unicode.GetString(bytes, 44, headerSize - 44 + 12); // +12 because we start counting from the offset after HeaderSize
